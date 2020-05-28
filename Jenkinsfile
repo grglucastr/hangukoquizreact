@@ -6,7 +6,7 @@ pipeline{
       steps{
         git(
           branch: 'master',
-          credentialId: 'generalkey',
+          credentialsId: 'generalkey',
           url: 'git@github.com:grglucastr/hangukoquizreact.git'
         )
       }
