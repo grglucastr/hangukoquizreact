@@ -2,9 +2,27 @@ pipeline{
   agent any
 
   stages{
-    stage('First stage, checkout code, or tests'){
+    stage('Checkout code'){
       steps{
-        echo "Hello World"
+        sh 'git clone https://github.com/grglucastr/hangukoquizreact.git'
+      }
+    }
+
+    stage('Install Dependencies'){
+      steps{
+        sh 'yarn install'
+      }
+    }
+
+    stage('Run Tests'){
+      steps{
+        echo 'No tests to run'
+      }
+    }
+
+    stage('Build'){
+      steps{
+        sh 'yarn build'
       }
     }
   }
