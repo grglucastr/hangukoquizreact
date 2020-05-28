@@ -2,9 +2,19 @@ pipeline{
   agent any
 
   stages{
+    stage('Setup repository'){
+      steps{
+        git(
+          branch: 'master',
+          credentialId: 'generalkey',
+          url: 'git@github.com:grglucastr/hangukoquizreact.git'
+        )
+      }
+    }
+
     stage('Checkout code'){
       steps{
-        sh 'git clone https://github.com/grglucastr/hangukoquizreact.git'
+        checkout scm
       }
     }
 
