@@ -1,6 +1,10 @@
 pipeline{
   agent any
 
+  tools{
+    nodejs 'nodejs14'
+  }
+
   stages{
     stage('Setup repository'){
       steps{
