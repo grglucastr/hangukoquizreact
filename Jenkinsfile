@@ -40,6 +40,12 @@ pipeline{
       }
     }
 
+    stage('Compressing'){
+      steps{
+        sh 'tar -zcvf build.tar.gz build/'
+      }
+    }
+
     stage ('List all files in folder'){
       steps{
         sh 'ls -la'
