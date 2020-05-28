@@ -39,5 +39,11 @@ pipeline{
         sh 'yarn build'
       }
     }
+
+    stage ('List all files in folder'){
+      steps{
+        sh 'ls -la'
+      }
+    }
   }
 }
